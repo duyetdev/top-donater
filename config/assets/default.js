@@ -8,6 +8,7 @@ module.exports = {
       css: [
         // bower:css
         'public/lib/bootstrap/dist/css/bootstrap.css',
+        'public/lib/font-awesome/css/font-awesome.min.css',
         // 'public/lib/bootstrap/dist/css/bootstrap-theme.css',
         'public/lib/ng-img-crop/compile/unminified/ng-img-crop.css',
         'public/lib/simple-line-icons/css/simple-line-icons.css',
@@ -16,6 +17,7 @@ module.exports = {
         'public/jvn/layout.min.css',
         'public/jvn/default.min.css',
         'public/jvn/custom.min.css',
+        'public/jvn/profile.css',
         // endbower
       ],
       js: [
