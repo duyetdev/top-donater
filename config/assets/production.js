@@ -8,7 +8,7 @@ module.exports = {
       css: [
         // bower:css
         'public/lib/bootstrap/dist/css/bootstrap.min.css',
-        'public/lib/bootstrap/dist/css/bootstrap-theme.min.css',
+        // 'public/lib/bootstrap/dist/css/bootstrap-theme.min.css',
         // endbower
       ],
       js: [

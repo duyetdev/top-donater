@@ -8,8 +8,14 @@ module.exports = {
       css: [
         // bower:css
         'public/lib/bootstrap/dist/css/bootstrap.css',
-        'public/lib/bootstrap/dist/css/bootstrap-theme.css',
-        'public/lib/ng-img-crop/compile/unminified/ng-img-crop.css'
+        // 'public/lib/bootstrap/dist/css/bootstrap-theme.css',
+        'public/lib/ng-img-crop/compile/unminified/ng-img-crop.css',
+        'public/lib/simple-line-icons/css/simple-line-icons.css',
+        'public/jvn/components.min.css',
+        'public/jvn/plugins.min.css',
+        'public/jvn/layout.min.css',
+        'public/jvn/default.min.css',
+        'public/jvn/custom.min.css',
         // endbower
       ],
       js: [

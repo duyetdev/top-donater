@@ -35,7 +35,7 @@ module.exports = function (grunt) {
       },
       serverJS: {
         files: _.union(defaultAssets.server.gruntConfig, defaultAssets.server.allJS),
-        tasks: ['eslint'],
+        tasks: [], // ['eslint'],
         options: {
           livereload: true
         }
@@ -48,7 +48,7 @@ module.exports = function (grunt) {
       },
       clientJS: {
         files: defaultAssets.client.js,
-        tasks: ['eslint'],
+        tasks: [], // ['eslint'],
         options: {
           livereload: true
         }

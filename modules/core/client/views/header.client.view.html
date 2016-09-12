@@ -1,4 +1,142 @@
-<div class="container" ng-controller="HeaderController as vm">
+<div class="page-wrapper-row" ng-controller="HeaderController as vm">
+  <div class="page-wrapper-top">
+    <div class="page-header">
+      <div class="page-header-top">
+        <div class="container">
+          <div class="page-logo">
+            <a href="index.html">
+              <!-- <img src="../assets/layouts/layout3/img/logo-default.jpg" alt="logo" class="logo-default"> -->
+            </a>
+          </div>
+
+          <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+          <a href="javascript:;" class="menu-toggler"></a>
+
+          <!-- BEGIN TOP NAVIGATION MENU -->
+          <div class="top-menu" ng-show="vm.authentication.user">
+            <ul class="nav navbar-nav pull-right">
+              <li class="dropdown dropdown-extended dropdown-notification dropdown-dark" id="header_notification_bar">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                    <i class="icon-bell"></i>
+                    <span class="badge badge-default">7</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="external">
+                      <h3>You have <strong>12 pending</strong> tasks</h3>
+                      <a href="app_todo.html">view all</a>
+                  </li>
+                  <li>
+                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 250px;">
+                      <ul class="dropdown-menu-list scroller" style="height: 250px; overflow: hidden; width: auto;" data-handle-color="#637283" data-initialized="1">
+                          <li>
+                              <a href="javascript:;">
+                                  <span class="time">just now</span>
+                                  <span class="details"> <span class="label label-sm label-icon label-success"> <i class="fa fa-plus"></i></span> New user registered. </span>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="javascript:;">
+                                  <span class="time">3 mins</span>
+                                  <span class="details"> <span class="label label-sm label-icon label-danger"> <i class="fa fa-bolt"></i></span> Server #12 overloaded. </span>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="javascript:;">
+                                  <span class="time">10 mins</span>
+                                  <span class="details"><span class="label label-sm label-icon label-warning"><i class="fa fa-bell-o"></i></span> Server #2 not responding. </span>
+                              </a>
+                          </li>
+                      </ul>
+                      <div class="slimScrollBar" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; background: rgb(99, 114, 131);"></div>
+                      <div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(234, 234, 234);"></div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <!-- END NOTIFICATION DROPDOWN -->
+              
+              <li class="droddown dropdown-separator">
+                  <span class="separator"></span>
+              </li>
+              <!-- BEGIN INBOX DROPDOWN -->
+              <li class="dropdown dropdown-extended dropdown-inbox dropdown-dark" id="header_inbox_bar">
+                  <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                      <span class="circle">Hi</span>
+                      <span class="corner"></span>
+                  </a>
+              </li>
+              <!-- END INBOX DROPDOWN -->
+              <!-- BEGIN USER LOGIN DROPDOWN -->
+              <li class="dropdown dropdown-user dropdown-dark">
+                  <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                      
+                      <img ng-src="{{vm.authentication.user.profileImageURL}}" alt="{{vm.authentication.user.displayName}}" class="header-profile-image" style="width:40px;height:40px" />
+                      <span class="username username-hide-mobile" ng-bind="vm.authentication.user.displayName"></span>
+                  </a>
+
+                  <ul class="dropdown-menu dropdown-menu-default">
+                    <li ui-sref-active="active" ng-repeat="item in vm.accountMenu.items">
+                      <a ui-sref="{{item.state}}" ng-bind="item.title"></a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                      <a href="/api/auth/signout" target="_self">Signout</a>
+                    </li>
+                  </ul>
+              </li>
+              <!-- END USER LOGIN DROPDOWN -->
+              <!-- BEGIN QUICK SIDEBAR TOGGLER -->
+              <li class="dropdown dropdown-extended quick-sidebar-toggler">
+                  <span class="sr-only">Toggle Quick Sidebar</span>
+                  <i class="icon-logout"></i>
+              </li>
+              <!-- END QUICK SIDEBAR TOGGLER -->
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- BEGIN HEADER MENU -->
+      <div class="page-header-menu">
+        <div class="container">
+          <div class="hor-menu  ">
+            <ul class="nav navbar-nav">
+                <li>
+                  <a href="/">
+                    Home
+                  </a>
+                </li>
+                <li ng-repeat="item in vm.menu.items | orderBy: 'position'" ng-if="item.shouldRender(vm.authentication.user);" ng-switch="item.type" ng-class="{ dropdown: item.type === 'dropdown' }" ui-sref-active="active" class="{{item.class}}" uib-dropdown="item.type === 'dropdown'">
+                  <a ng-switch-when="dropdown" class="dropdown-toggle" uib-dropdown-toggle role="button">{{::item.title}}&nbsp;<span class="arrow"></span></a>
+                  <ul ng-switch-when="dropdown" class="dropdown-menu pull-left">
+                    <li ng-repeat="subitem in item.items | orderBy: 'position'" ng-if="subitem.shouldRender(vm.authentication.user);">
+                      <a ui-sref="{{subitem.state}}({{subitem.params}})" ng-bind="subitem.title"></a>
+                    </li>
+                  </ul>
+                  <a ng-switch-default ui-sref="{{item.state}}" ng-bind="item.title"></a>
+                </li>
+            </ul>
+
+
+            <ul class="nav navbar-nav navbar-right" ng-hide="vm.authentication.user">
+              <li ui-sref-active="active">
+                <a ui-sref="authentication.signup">Sign Up</a>
+              </li>
+              <li class="divider-vertical"></li>
+              <li ui-sref-active="active">
+                <a ui-sref="authentication.signin">Sign In</a>
+              </li>
+            </ul>
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 
+
+<div class="container" >
   <div class="navbar-header">
     <button class="navbar-toggle" type="button" ng-click="vm.isCollapsed = !vm.isCollapsed">
       <span class="sr-only">Toggle navigation</span>
@@ -6,29 +144,14 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a ui-sref="home" class="navbar-brand">MEAN.JS</a>
   </div>
   <nav class="navbar-collapse" uib-collapse="!vm.isCollapsed" role="navigation">
     <ul class="nav navbar-nav" ng-if="vm.menu.shouldRender(vm.authentication.user);">
-      <li ng-repeat="item in vm.menu.items | orderBy: 'position'" ng-if="item.shouldRender(vm.authentication.user);" ng-switch="item.type" ng-class="{ dropdown: item.type === 'dropdown' }" ui-sref-active="active" class="{{item.class}}" uib-dropdown="item.type === 'dropdown'">
-        <a ng-switch-when="dropdown" class="dropdown-toggle" uib-dropdown-toggle role="button">{{::item.title}}&nbsp;<span class="caret"></span></a>
-        <ul ng-switch-when="dropdown" class="dropdown-menu">
-          <li ng-repeat="subitem in item.items | orderBy: 'position'" ng-if="subitem.shouldRender(vm.authentication.user);">
-            <a ui-sref="{{subitem.state}}({{subitem.params}})" ng-bind="subitem.title"></a>
-          </li>
-        </ul>
-        <a ng-switch-default ui-sref="{{item.state}}" ng-bind="item.title"></a>
-      </li>
+      <ul class="nav navbar-nav pull-right">
+              
+            </ul>
     </ul>
-    <ul class="nav navbar-nav navbar-right" ng-hide="vm.authentication.user">
-      <li ui-sref-active="active">
-        <a ui-sref="authentication.signup">Sign Up</a>
-      </li>
-      <li class="divider-vertical"></li>
-      <li ui-sref-active="active">
-        <a ui-sref="authentication.signin">Sign In</a>
-      </li>
-    </ul>
+    
     <ul class="nav navbar-nav navbar-right" ng-show="vm.authentication.user">
       <li class="dropdown" uib-dropdown>
         <a class="dropdown-toggle user-header-dropdown-toggle" uib-dropdown-toggle role="button">
@@ -36,15 +159,10 @@
           <span ng-bind="vm.authentication.user.displayName"></span> <b class="caret"></b>
         </a>
         <ul class="dropdown-menu" role="menu">
-          <li ui-sref-active="active" ng-repeat="item in vm.accountMenu.items">
-            <a ui-sref="{{item.state}}" ng-bind="item.title"></a>
-          </li>
-          <li class="divider"></li>
-          <li>
-            <a href="/api/auth/signout" target="_self">Signout</a>
-          </li>
+          
         </ul>
       </li>
     </ul>
   </nav>
 </div>
+ -->

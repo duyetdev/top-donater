@@ -10,6 +10,13 @@
 
   function PasswordValidator($window) {
     var owaspPasswordStrengthTest = $window.owaspPasswordStrengthTest;
+    owaspPasswordStrengthTest.configs = {
+      allowPassphrases: true,
+      maxLength: 128,
+      minLength: 6,
+      minPhraseLength: 20,
+      minOptionalTestsToPass: 1
+    };
 
     var service = {
       getResult: getResult,
