@@ -13,9 +13,9 @@
           <a href="javascript:;" class="menu-toggler"></a>
 
           <!-- BEGIN TOP NAVIGATION MENU -->
-          <div class="top-menu" ng-show="vm.authentication.user">
+          <div class="top-menu">
             <ul class="nav navbar-nav pull-right">
-              <li class="dropdown dropdown-extended dropdown-notification dropdown-dark" id="header_notification_bar">
+              <li class="dropdown dropdown-extended dropdown-notification dropdown-dark" id="header_notification_bar"  ng-show="vm.authentication.user">
                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                     <i class="icon-bell"></i>
                     <span class="badge badge-default">7</span>
@@ -55,11 +55,11 @@
               </li>
               <!-- END NOTIFICATION DROPDOWN -->
               
-              <li class="droddown dropdown-separator">
+              <li class="droddown dropdown-separator"  ng-show="vm.authentication.user">
                   <span class="separator"></span>
               </li>
               <!-- BEGIN INBOX DROPDOWN -->
-              <li class="dropdown dropdown-extended dropdown-inbox dropdown-dark" id="header_inbox_bar">
+              <li class="dropdown dropdown-extended dropdown-inbox dropdown-dark" id="header_inbox_bar" ng-show="vm.authentication.user">
                   <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                       <span class="circle">Hi</span>
                       <span class="corner"></span>
@@ -70,8 +70,12 @@
               <li class="dropdown dropdown-user dropdown-dark">
                   <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                       
-                      <img ng-src="{{vm.authentication.user.profileImageURL}}" alt="{{vm.authentication.user.displayName}}" class="header-profile-image" style="width:40px;height:40px" />
+                      <img ng-src="{{vm.authentication.user.profileImageURL}}" alt="{{vm.authentication.user.displayName}}" class="header-profile-image" style="width:40px;height:40px" ng-show="vm.authentication.user" />
+
+                      <img src="/jvn/user-default.png" class="header-profile-image" style="width:40px;height:40px" ng-hide="vm.authentication.user" />
+
                       <span class="username username-hide-mobile" ng-bind="vm.authentication.user.displayName"></span>
+                      <span class="username username-hide-mobile" ng-hide="vm.authentication.user.displayName" ng-click="vm.doLogin()">Login / Register</span>
                   </a>
 
                   <ul class="dropdown-menu dropdown-menu-default">
@@ -86,7 +90,7 @@
               </li>
               <!-- END USER LOGIN DROPDOWN -->
               <!-- BEGIN QUICK SIDEBAR TOGGLER -->
-              <li class="dropdown dropdown-extended quick-sidebar-toggler">
+              <li class="dropdown dropdown-extended quick-sidebar-toggler"  ng-show="vm.authentication.user" ng-click="vm.signOut()">
                   <span class="sr-only">Toggle Quick Sidebar</span>
                   <i class="icon-logout"></i>
               </li>

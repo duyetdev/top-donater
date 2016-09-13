@@ -2,20 +2,20 @@
   <div class="page-header">
     <h1>{{vm.donate._id ? 'Edit Donate' : 'Donate'}}</h1>
   </div>
-  <div class="col-md-12">
+  <div class="col-md-6 col-md-offset-3">
     <form name="vm.form.donateForm" class="form-horizontal" ng-submit="vm.save(vm.form.donateForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
           <label class="control-label" for="name">Item</label>
-          <input name="name" type="text" ng-model="vm.donate.name" id="name" class="form-control" placeholder="Name" required>
-          <div ng-messages="vm.form.donateForm.name.$error" role="alert">
+          <input name="item" type="text" ng-model="vm.donate.item" id="item" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.donateForm.item.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Item is required.</p>
           </div>
         </div>
         <div class="form-group" show-errors>
-          <label class="control-label" for="name">Number</label>
-          <input name="name" type="number" ng-model="vm.donate.name" id="name" class="form-control" placeholder="Number" required>
-          <div ng-messages="vm.form.donateForm.name.$error" role="alert">
+          <label class="control-label" for="number">Number</label>
+          <input name="number" type="number" ng-model="vm.donate.number" id="number" class="form-control" placeholder="Number" required>
+          <div ng-messages="vm.form.donateForm.number.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Number is required.</p>
           </div>
         </div>
