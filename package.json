@@ -55,7 +55,7 @@
     "lodash": "~4.15.0",
     "lusca": "~1.4.1",
     "method-override": "~2.3.5",
-    "mocha": "~3.0.2",
+    "mocha": "~4.0.0",
     "mongoose": "~4.5.10",
     "morgan": "~1.7.0",
     "multer": "~1.2.0",
