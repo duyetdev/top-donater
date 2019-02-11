@@ -52,7 +52,7 @@
     "grunt-cli": "~1.2.0",
     "helmet": "~2.1.2",
     "jasmine-core": "~2.5.0",
-    "lodash": "~4.15.0",
+    "lodash": "~4.17.11",
     "lusca": "~1.4.1",
     "method-override": "~2.3.5",
     "mocha": "~3.0.2",
