@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.7.0
+version: v1.13.5
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -20,3 +20,46 @@ patch:
         patched: '2017-05-22T01:56:10.354Z'
     - socket.io > socket.io-client > debug > ms:
         patched: '2017-05-22T01:56:10.354Z'
+  SNYK-JS-LODASH-450202:
+    - acl > async > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
+    - wiredep > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
+    - express-hbs > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
+    - snyk > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
+    - acl > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
+    - grunt > grunt-legacy-log > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
+    - grunt > grunt-legacy-util > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
+    - mongoose > async > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
+    - snyk > snyk-nuget-plugin > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
+    - snyk > snyk-nodejs-lockfile-parser > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
+    - async > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
+    - snyk > @snyk/dep-graph > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
+    - snyk > inquirer > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
+    - snyk > snyk-config > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
+    - snyk > snyk-mvn-plugin > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
+    - snyk > @snyk/dep-graph > graphlib > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
+    - snyk > snyk-php-plugin > @snyk/composer-lockfile-parser > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
+    - grunt > grunt-legacy-log > grunt-legacy-log-utils > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
+    - wiredep > wiredep-cli > wiredep > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
+    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2019-07-08T07:42:47.682Z'
