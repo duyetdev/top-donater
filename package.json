@@ -80,7 +80,7 @@
     "snyk": "1.226.0"
   },
   "devDependencies": {
-    "coveralls": "2.11.16",
+    "coveralls": "2.13.3",
     "eslint": "2.2.0",
     "eslint-config-airbnb": "6.0.2",
     "grunt-concurrent": "2.0.4",
