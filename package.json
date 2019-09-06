@@ -83,7 +83,7 @@
     "coveralls": "2.11.16",
     "eslint": "2.2.0",
     "eslint-config-airbnb": "6.0.2",
-    "grunt-concurrent": "2.0.4",
+    "grunt-concurrent": "2.3.1",
     "grunt-contrib-copy": "1.0.0",
     "grunt-contrib-csslint": "0.4.0",
     "grunt-contrib-cssmin": "0.12.3",
