@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.7.0
+version: v1.14.1
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -20,3 +20,50 @@ patch:
         patched: '2017-05-22T01:56:10.354Z'
     - socket.io > socket.io-client > debug > ms:
         patched: '2017-05-22T01:56:10.354Z'
+  SNYK-JS-LODASH-567746:
+    - express-hbs > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - acl > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - async > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - snyk > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - wiredep > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - acl > async > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - grunt > grunt-legacy-log > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - grunt > grunt-legacy-util > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - mongoose > async > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - snyk > @snyk/dep-graph > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - snyk > inquirer > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - snyk > snyk-config > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - snyk > snyk-mvn-plugin > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - snyk > snyk-nodejs-lockfile-parser > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - snyk > snyk-nuget-plugin > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - grunt > grunt-legacy-log > grunt-legacy-log-utils > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - snyk > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - snyk > snyk-nuget-plugin > dotnet-deps-parser > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - snyk > snyk-php-plugin > @snyk/composer-lockfile-parser > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
+    - wiredep > wiredep-cli > wiredep > lodash:
+        patched: '2020-05-04T07:43:11.822Z'
