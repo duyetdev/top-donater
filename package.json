@@ -58,7 +58,7 @@
     "lusca": "1.4.1",
     "method-override": "2.3.10",
     "mocha": "3.0.2",
-    "mongoose": "4.10.8",
+    "mongoose": "5.12.3",
     "morgan": "1.8.2",
     "multer": "1.2.1",
     "nodemailer": "2.5.0",
@@ -77,7 +77,7 @@
     "validator": "5.5.0",
     "winston": "2.4.4",
     "wiredep": "4.0.0",
-    "snyk": "1.226.0"
+    "snyk": "1.230.7"
   },
   "devDependencies": {
     "coveralls": "2.11.16",
